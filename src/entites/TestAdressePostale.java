@@ -4,18 +4,8 @@ public class TestAdressePostale {
 
 	public static void main(String[] args) {
 
-		AdressePostale A = new AdressePostale();
-		AdressePostale B = new AdressePostale();
-		
-		A.numeroRue = 12;
-		A.libelleRue = "Rue de Bayorne";
-		A.codePostal = 31000;
-		A.ville = "Toulouse";
-		
-		B.numeroRue = 15;
-		B.libelleRue = "Rue de tweet";
-		B.codePostal = 93120;
-		B.ville = "La courneuve";
+        AdressePostale A = new AdressePostale(12, "Rue de Bayorne", 31000, "Toulouse");
+        AdressePostale B = new AdressePostale(15, "Rue de tweet", 93120, "La Courneuve");
 	}
 
 }
