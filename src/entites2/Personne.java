@@ -14,4 +14,8 @@ public class Personne {
         this.adressePostale = adressePostale;
     }
 	
+	public void AfficherPersonne() {
+		System.out.println(prenom + nom.toUpperCase());
+	}
+	
 }
