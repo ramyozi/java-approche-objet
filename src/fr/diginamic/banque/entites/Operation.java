@@ -15,5 +15,13 @@ public abstract class Operation {
 				+ amount + "]";
 	}
 
-    public abstract String getType();
+    public String getOperationDate() {
+		return operationDate;
+	}
+
+	public double getAmount() {
+		return amount;
+	}
+
+	public abstract String getType();
 }
