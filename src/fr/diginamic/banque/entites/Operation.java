@@ -9,5 +9,11 @@ public abstract class Operation {
 		this.amount = amount;
 	}
 
+	@Override
+	public String toString() {
+		return "Operation [operationDate=" + operationDate + ", amount="
+				+ amount + "]";
+	}
+
 	
 }
