@@ -1,16 +1,14 @@
 package fr.diginamic.banque;
 
 import fr.diginamic.banque.entites.Compte;
+import fr.diginamic.banque.entites.CompteTaux;
 
 public class TestBanque {
     public static void main(String[] args) {
-        // Créez une instance de la classe Compte avec un numéro et un solde de votre choix
-        Compte compte = new Compte("123456", 1000.0);
+        Compte compte = new Compte("12345", 1000.0);
+        CompteTaux compteTaux = new CompteTaux("67890", 2000.0, 0.03);
 
-        // Affichez l'instance créée avec System.out.println(...)
-        System.out.println("Numéro de compte : " + compte.getNumeroCompte());
-        System.out.println("Solde du compte : " + compte.getSolde());
+       
 
-        // les informations du compte (numéro et solde) sont affichées.
     }
 }
