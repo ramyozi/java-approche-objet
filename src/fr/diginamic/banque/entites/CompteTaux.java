@@ -15,4 +15,17 @@ public class CompteTaux extends Compte{
         return super.toString() + ", tauxDeRemuneration=" + tauxDeRemuneration;
     }
 
+	public double getTauxDeRemuneration() {
+		return tauxDeRemuneration;
+	}
+
+	public void setTauxDeRemuneration(double tauxDeRemuneration) {
+		this.tauxDeRemuneration = tauxDeRemuneration;
+	}
+
+	@Override
+	public double calculerMontant() {
+		return this.getSolde() * (1 + this.tauxDeRemuneration / 100 );
+	}
+	
 }

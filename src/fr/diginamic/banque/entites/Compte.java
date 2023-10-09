@@ -2,7 +2,7 @@ package fr.diginamic.banque.entites;
 
 public class Compte {
     private String numeroCompte;
-    private double solde;
+    protected double solde;
 
     public Compte(String numeroCompte, double solde) {
         this.numeroCompte = numeroCompte;
@@ -24,6 +24,10 @@ public class Compte {
     public void setSolde(double solde) {
         this.solde = solde;
     }
+    
+	public double calculerMontant() {
+		return this.solde;
+	}
     
     @Override
     public String toString() {
