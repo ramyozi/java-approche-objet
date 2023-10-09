@@ -15,5 +15,5 @@ public abstract class Operation {
 				+ amount + "]";
 	}
 
-	
+    public abstract String getType();
 }

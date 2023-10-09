@@ -14,7 +14,7 @@ public class TestOperation {
         operations[3] = new Debit("2023-10-15", 300.0);
         
         for (Operation o : operations){
-        	System.out.println(o);
+        	System.out.println(o.getType()+ " : " + o);
         }
 
 	}
