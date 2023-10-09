@@ -1,4 +1,4 @@
-package tests;
+package fr.diginamic.banque;
 
 import fr.diginamic.banque.entites.Compte;
 
@@ -11,7 +11,6 @@ public class TestBanque {
         System.out.println("Numéro de compte : " + compte.getNumeroCompte());
         System.out.println("Solde du compte : " + compte.getSolde());
 
-        // Que constatez-vous ?
-        // Vous devriez constater que les informations du compte (numéro et solde) sont affichées.
+        // les informations du compte (numéro et solde) sont affichées.
     }
 }
