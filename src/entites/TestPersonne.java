@@ -26,6 +26,10 @@ public class TestPersonne {
     }
 	
 	public static void afficherInfoPersonne(Personne personne) {
+		System.out.println("---------------------------------");
+		System.out.print("Nom complet: " );
+		personne.AfficherNomCompletPersonne();
+		System.out.println("---------------------------------");
         System.out.println("Nom : " + personne.getNom());
         System.out.println("Prénom : " + personne.getPrenom());
         System.out.println("Adresse : " + personne.getAdresse().numeroRue + " " +
