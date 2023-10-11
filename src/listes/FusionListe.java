@@ -17,11 +17,17 @@ public class FusionListe {
 		
 		
 		List<String> liste3 = new ArrayList<String>();
-		liste3.addAll(liste1);
-		liste3.addAll(liste2);
-		
-		System.out.println(liste3);
 
-	}
+        for (String couleur : liste1) {
+            liste3.add(couleur);
+        }
 
+        for (String couleur : liste2) {
+            liste3.add(couleur);
+        }
+
+        System.out.println("Liste fusionnée (liste3) : " + liste3);
+    }
+
+	
 }
