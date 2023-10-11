@@ -17,6 +17,12 @@ public class Ville {
 		return nbHabitant;
 	}
 	
+	public void mettreNomEnMajusculesSiPopulationSuperieureA(int seuil) {
+        if (this.nbHabitant > seuil) {
+            this.nom = this.nom.toUpperCase();
+        }
+    }
+
 /*	public void setNom(String nom) {
 		this.nom = nom;
 	}

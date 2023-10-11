@@ -26,6 +26,11 @@ public class TestVilles {
         System.out.println("Ville la moins peuplée : " + villeMoinsPeuplee.getNom());
         MaListe.remove(villeMoinsPeuplee);
         
+        //Uppercase ville avec plus de 100,000 habitants
+        for (Ville ville : MaListe) {
+            ville.mettreNomEnMajusculesSiPopulationSuperieureA(100000);
+        }        
+        
         // Afficher
         AfficherListeNomVille(MaListe);
 
@@ -68,6 +73,4 @@ public class TestVilles {
 		}
 		System.out.println("liste noms de ville: "+ Noms);
 	}
-	
-	
 }
