@@ -1,8 +1,8 @@
 package listes;
 
 public class Ville {
-	String nom;
-	int nbHabitant;
+	private String nom;
+	private int nbHabitant;
 	
 	public Ville(String nom, int nbHabitant) {
 		this.nom = nom;
@@ -13,16 +13,17 @@ public class Ville {
 		return nom;
 	}
 
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
-
 	public int getNbHabitant() {
 		return nbHabitant;
 	}
-
+	
+/*	public void setNom(String nom) {
+		this.nom = nom;
+	}
+	
 	public void setNbHabitant(int nbHabitant) {
 		this.nbHabitant = nbHabitant;
 	}
+*/
 	
 }
