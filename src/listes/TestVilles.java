@@ -21,7 +21,14 @@ public class TestVilles {
         Ville villePlusPeuplee = rechercherVillePlusPeuplee(MaListe);
         System.out.println("Ville la plus peuplée : " + villePlusPeuplee.getNom());
 
+        // Recherchez la ville la moin peuplée
+        Ville villeMoinsPeuplee = rechercherVilleMoinsPeuplee(MaListe);
+        System.out.println("Ville la moins peuplée : " + villeMoinsPeuplee.getNom());
+        MaListe.remove(villeMoinsPeuplee);
         
+        // Afficher
+        AfficherListeNomVille(MaListe);
+
 	}
 	
 	public static Ville rechercherVillePlusPeuplee(List<Ville> villes) {
@@ -37,6 +44,30 @@ public class TestVilles {
 
         return villePlusPeuplee;
     }
+	
+	
+	
+	public static Ville rechercherVilleMoinsPeuplee(List<Ville> villes) {
+        Ville villeMoinsPeuplee = null;
+        int populationMin = Integer.MAX_VALUE;
 
+        for (Ville ville : villes) {
+            if (ville.getNbHabitant() < populationMin) {
+                populationMin = ville.getNbHabitant();
+                villeMoinsPeuplee = ville;
+            }
+        }
 
+        return villeMoinsPeuplee;
+    }
+	
+	public static void AfficherListeNomVille(List<Ville> villes) {
+		List<String> Noms = new ArrayList<>();
+		for (Ville ville : villes) {
+			Noms.add(ville.getNom());
+		}
+		System.out.println("liste noms de ville: "+ Noms);
+	}
+	
+	
 }
