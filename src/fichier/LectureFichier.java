@@ -9,36 +9,51 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LectureFichier {
+    public static void main(String[] args) {
+        Path inputPath = Paths.get("C:/Users/ramzi/Downloads/recensement.csv");
+        List<String> tableau;
 
-	public static void main(String[] args) throws IOException {
+        try {
+            tableau = Files.readAllLines(inputPath, StandardCharsets.UTF_8);
 
-		Path path = Paths.get("C:/Users/ramzi/Downloads/recensement.csv");
-        List<String> liste = Files.readAllLines(path, StandardCharsets.UTF_8);
+            List<String> filtre = new ArrayList<>();
+            boolean firstLine = true;
 
-        ArrayList<Ville> villes = new ArrayList<>();
+            for (String line : tableau) {
+                if (firstLine) {
+                    firstLine = false;
+                    continue; 
+                }
 
-        for (String line : liste) {
-            String[] tokens = line.split(";");
-            
-            // extraction des donnees
-            if (tokens.length == 4) {
-                String nom = tokens[0];
-                String codeDepartement = tokens[1];
-                String nomRegion = tokens[2];
-                int populationTotale = Integer.parseInt(tokens[3]);
-                // nouvel objet: ville
-                Ville ville = new Ville(nom, codeDepartement, nomRegion, populationTotale);
-                villes.add(ville);
+                String[] tokens = line.split(";");
+                
+                if (tokens.length == 10) {
+                    String nom = tokens[6];
+                    String codeDep = tokens[2];
+                    String nomRegion = tokens[1];
+                    try {
+                        int populationTotale = Integer.parseInt(tokens[9].replaceAll("\\s", ""));
+                        if (populationTotale > 25000) {
+                            filtre.add(nom + ";" + codeDep + ";" + nomRegion + ";" + populationTotale);
+                        }
+                    } catch (NumberFormatException e) {
+                    }
+                }
             }
+
+            Path outputPath = Paths.get("C:/Users/ramzi/Downloads/filtered_cities.csv");
+
+            StringBuilder csvContent = new StringBuilder();
+            csvContent.append("Nom;Code département;Nom de la région;Population totale\n");
+            for (String city : filtre) {
+                csvContent.append(city).append("\n");
+            }
+
+            Files.write(outputPath, csvContent.toString().getBytes(StandardCharsets.UTF_8));
+
+            System.out.println("Filtered cities with a population over 25,000 have been written to filtered_cities.csv");
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-
-        for (Ville line : villes) {
-            System.out.println(line);
-        }
-
-		
-	}
-
+    }
 }
-
-		

@@ -13,8 +13,6 @@ class Ville {
         this.nbPopulation = nbPopulation;
     }
 
-    
-
     public String getNom() {
 		return nom;
 	}
