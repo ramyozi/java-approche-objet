@@ -1,7 +1,6 @@
 package maps;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -19,7 +18,8 @@ public class ComptagePaysParContinent {
 		paysListe.add(new Pays("Indonésie", 220000000, "Océanie"));
 		paysListe.add(new Pays("Australie", 65000000, "Océanie"));
 		
-		HashMap<String, Long> cpt = new HashMap<String, Long>();		
+		//non utilisée
+		//HashMap<String, Long> cpt = new HashMap<String, Long>();		
 		
 		// Comptage
         Map<String, Long> comptageParContinent = paysListe.stream()
