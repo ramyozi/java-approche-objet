@@ -23,13 +23,13 @@ public class Ville {
         }
     }
 
-/*	public void setNom(String nom) {
+	public void setNom(String nom) {
 		this.nom = nom;
 	}
 	
 	public void setNbHabitant(int nbHabitant) {
 		this.nbHabitant = nbHabitant;
 	}
-*/
+
 	
 }
