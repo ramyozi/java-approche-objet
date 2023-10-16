@@ -7,7 +7,7 @@ public class Application {
     public static void main(String[] args) {
         Recensement recensement = new Recensement();
         
-        recensement.chargerDonnees("recensement.csv");
+        recensement.chargerDonnees("C:\\Users\\ramzi\\Downloads\\recensement2016.csv");
 
         Scanner scanner = new Scanner(System.in);
 
