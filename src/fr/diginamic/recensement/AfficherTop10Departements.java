@@ -7,20 +7,28 @@ import java.util.Scanner;
 public class AfficherTop10Departements extends MenuService {
     @Override
     public void traiter(Recensement recensement, Scanner scanner) {
-        // Get the list of all departments from 'recensement'
+        System.out.println("Afficher les 10 départements les plus peuplés :");
+
         List<String> departements = recensement.getAllDepartements();
         
-        // Sort the departments by total population (you need to implement 'getAllDepartements' method)
-        Collections.sort(departements, (dep1, dep2) -> {
-            int population1 = recensement.getPopulationDepartement(dep1);
-            int population2 = recensement.getPopulationDepartement(dep2);
-            return Integer.compare(population2, population1);
-        });
-        
-        // Display the top 10 departments
-        System.out.println("Les 10 départements les plus peuplés :");
-        for (int i = 0; i < 10 && i < departements.size(); i++) {
-            System.out.println(departements.get(i));
+        if (departements.size() > 0) {
+            Collections.sort(departements, (dept1, dept2) -> {
+                int population1 = recensement.getPopulationDepartement(dept1);
+                int population2 = recensement.getPopulationDepartement(dept2);
+                return Integer.compare(population2, population1);
+            });
+
+            int count = 0;
+            for (String departement : departements) {
+                if (count >= 10) {
+                    break;
+                }
+                int population = recensement.getPopulationDepartement(departement);
+                System.out.printf("%-5s%-35s%-20s%-10s%n", (count + 1) + ".", departement, "Population : " + population + " habitants", "(" + population + ")");
+                count++;
+            }
+        } else {
+            System.out.println("Aucun département avec population connue.");
         }
     }
 }
