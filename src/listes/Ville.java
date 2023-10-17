@@ -30,6 +30,16 @@ public class Ville {
 	public void setNbHabitant(int nbHabitant) {
 		this.nbHabitant = nbHabitant;
 	}
+	
+	@Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
+        Ville ville = (Ville) o;
+
+        if (nbHabitant != ville.nbHabitant) return false;
+        return nom != null ? nom.equals(ville.nom) : ville.nom == null;
+    }
 	
 }
