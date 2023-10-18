@@ -7,6 +7,12 @@ public class Ville {
 	private int nbHabitant;
 	private Continent continent; // Ajout de l'attribut Continent
 
+	public Ville(String nom, int nbHabitant) {
+		this.nom = nom;
+		this.nbHabitant = nbHabitant;
+		this.continent = null;
+	}
+	
 	public Ville(String nom, int nbHabitant, Continent continent) {
 		this.nom = nom;
 		this.nbHabitant = nbHabitant;
